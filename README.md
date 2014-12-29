@@ -55,3 +55,6 @@ the database migrations shipped with the app."
     Applying admin.0001_initial... OK
     Applying sessions.0001_initial... OK
 
+## Create app
+    (mysite)➜  mysite git:(master) python manage.py startapp polls
+
