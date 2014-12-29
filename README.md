@@ -39,3 +39,19 @@ mkvirtualenv -p /usr/local/bin/python3 mysite
 
 ## Create project
     (mysite)➜  pythonProjects  django-admin.py startproject mysite
+
+## Create database
+"The migrate command looks at the INSTALLED_APPS setting and
+creates any necessary database tables according to
+the database settings in your mysite/settings.py file and
+the database migrations shipped with the app."
+
+    (mysite)➜  mysite git:(master) python manage.py migrate
+    Operations to perform:
+    Apply all migrations: admin, auth, contenttypes, sessions
+    Running migrations:
+    Applying contenttypes.0001_initial... OK
+    Applying auth.0001_initial... OK
+    Applying admin.0001_initial... OK
+    Applying sessions.0001_initial... OK
+
