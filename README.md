@@ -58,10 +58,42 @@ the database migrations shipped with the app."
 ## Create app
     (mysite)➜  mysite git:(master) python manage.py startapp polls
 
-## makemigration
+## Change model
+3 steps
+- Change your models (in models.py).
+- Run python manage.py makemigrations to create migrations for those changes
+- Run python manage.py migrate to apply those changes to the database.
+
+## makemigrations
     (mysite)➜  polls git:(master) python manage.py makemigrations polls
     Migrations for 'polls':
       0001_initial.py:
         - Create model Choice
         - Create model Question
         - Add field question to choice
+
+## sqlmigrate
+Doesn't run migration, just prints to terminal
+
+    (mysite)➜  polls git:(master) python manage.py sqlmigrate polls 0001
+    BEGIN;
+    CREATE TABLE "polls_choice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "choice_text" varchar(200) NOT NULL, "votes" integer NOT NULL);
+    CREATE TABLE "polls_question" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "question_text" varchar(200) NOT NULL, "pub_date" datetime NOT NULL);
+    CREATE TABLE "polls_choice__new" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "choice_text" varchar(200) NOT NULL, "votes" integer NOT NULL, "question_id" integer NOT NULL REFERENCES "polls_question" ("id"));
+    INSERT INTO "polls_choice__new" ("choice_text", "id", "votes") SELECT "choice_text", "id", "votes" FROM "polls_choice";
+    DROP TABLE "polls_choice";
+    ALTER TABLE "polls_choice__new" RENAME TO "polls_choice";
+    CREATE INDEX polls_choice_7aa0f6ee ON "polls_choice" ("question_id");
+
+## check
+    (mysite)➜  polls git:(master) python manage.py check
+    System check identified no issues (0 silenced).
+
+## migrate
+    (mysite)➜  polls git:(master) ✗ python manage.py migrate
+    Operations to perform:
+    Apply all migrations: auth, sessions, admin, contenttypes, polls
+    Running migrations:
+    Applying polls.0001_initial... OK
+
+## TODO: Playing with the API
