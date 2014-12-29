@@ -66,5 +66,8 @@ nosetests.xml
 .project
 .pydevproject
 
+# PyCharm from JetBrains
+.idea
+
 # rope, for example from vim plugin
 .ropeproject
