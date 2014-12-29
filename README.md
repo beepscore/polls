@@ -58,3 +58,10 @@ the database migrations shipped with the app."
 ## Create app
     (mysite)➜  mysite git:(master) python manage.py startapp polls
 
+## makemigration
+    (mysite)➜  polls git:(master) python manage.py makemigrations polls
+    Migrations for 'polls':
+      0001_initial.py:
+        - Create model Choice
+        - Create model Question
+        - Add field question to choice
