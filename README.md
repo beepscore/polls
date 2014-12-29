@@ -5,7 +5,7 @@ Record info about django tutorial.
 
 # References
 
-Writing your first Django app, part 1
+Writing your first Django app, part 1  
 https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 
 http://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv
@@ -13,8 +13,8 @@ http://stackoverflow.com/questions/1534210/use-different-python-version-with-vir
 # Results
 
 ## virtualenv and virtualenvwrapper
-Use pre-installed Python 3.
-install Django 1.7
+Use pre-installed Python 3.  
+install Django 1.7  
 virtualenv -p /usr/local/bin/python3 mysite
 or
 mkvirtualenv -p /usr/local/bin/python3 mysite
