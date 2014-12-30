@@ -103,4 +103,7 @@ Doesn't run migration, just prints to terminal
     Running migrations:
     Applying polls.0001_initial... OK
 
-## TODO: Playing with the API
+## Part 2 Playing with the API
+
+### Add username and password (see keychain)
+    python manage.py createsuperuser
