@@ -37,6 +37,13 @@ mkvirtualenv -p /usr/local/bin/python3 mysite
     (mysite)➜  pythonProjects  python -c "import django; print(django.get_version())"
     1.7.1
 
+### deactivate
+    deactivate
+
+### re-activate
+If using virtualenvwrapper, can use command workon
+    workon mysite
+
 ## Create project
     (mysite)➜  pythonProjects  django-admin.py startproject mysite
 
