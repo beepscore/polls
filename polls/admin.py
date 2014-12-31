@@ -3,7 +3,11 @@ from polls.models import Question
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    # list publication date, then question text
-    fields = ['pub_date', 'question_text']
+    # use fieldsets to show title
+    fieldsets = [
+        (None, {'fields': ['question_text']}),
+        ('Date information', {'fields': ['pub_date']}),
+    ]
+
 
 admin.site.register(Question, QuestionAdmin)
