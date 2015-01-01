@@ -17,7 +17,10 @@ class Question(models.Model):
     # assign attribute admin_order_field to method was_published_recently
     # http://blog.lerner.co.il/python-attributes/
     was_published_recently.admin_order_field = 'pub_date'
+    # change displayed value from words 'True' or 'False' to
+    # symbols green circle with checkmark or red circle with -
     was_published_recently.boolean = True
+    # column heading
     was_published_recently.short_description = 'Published recently?'
 
 
