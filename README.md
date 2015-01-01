@@ -7,13 +7,14 @@ Record info about django tutorial.
 
 Writing your first Django app, part 1  
 https://docs.djangoproject.com/en/1.7/intro/tutorial01/
+https://docs.djangoproject.com/en/1.7/intro/tutorial02/
 
 http://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv
 
 # Results
 
 ## virtualenv and virtualenvwrapper
-Use pre-installed Python 3.  
+Use pre-installed Python 3, includes virtualenv.  
 install Django 1.7  
 virtualenv -p /usr/local/bin/python3 mysite
 or
@@ -64,6 +65,10 @@ the database migrations shipped with the app."
 
 ## Create app
     (mysite)➜  mysite git:(master) python manage.py startapp polls
+
+## start development server
+For production use a different server.
+    $ python manage.py runserver
 
 ## Change model
 3 steps
