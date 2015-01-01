@@ -129,3 +129,10 @@ django/contrib/admin/templates/admin/base_site.html
 
 In project make directory templates/admin and add base_site.html.
 
+In base_site.html change header from default 'Django administration' to Polls administration.
+Tutorial notes:
+"We use this approach to teach you how to override templates.
+In an actual project, you would probably use the django.contrib.admin.AdminSite.site_header attribute
+to more easily make this particular customization."
+
+
