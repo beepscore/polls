@@ -112,3 +112,20 @@ Doesn't run migration, just prints to terminal
 
 ### Add username and password (see keychain)
     python manage.py createsuperuser
+
+### Customizing your project's templates
+
+Get environment path to django
+    (mysite)➜  polls git:(master) ✗ python -c "
+    dquote> import sys
+    dquote> sys.path = sys.path[1:]
+    dquote> import django
+    dquote> print(django.__path__)"
+
+    ['/Users/stevebaker/.virtualenvs/mysite/lib/python3.4/site-packages/django']
+
+Copy file base_site.html from django
+django/contrib/admin/templates/admin/base_site.html
+
+In project make directory templates/admin and add base_site.html.
+
