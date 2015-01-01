@@ -135,4 +135,8 @@ Tutorial notes:
 In an actual project, you would probably use the django.contrib.admin.AdminSite.site_header attribute
 to more easily make this particular customization."
 
+In base_site.html I changed back to original.
+{{ site_header|default:_('Django administration') }}
+Then in urls.py set admin.site_header
+
 
