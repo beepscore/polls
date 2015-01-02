@@ -7,7 +7,7 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
 
                        # NOTE argument 'polls.urls' must have delimiter ''
-                       url(r'^polls/', include('polls.urls')),
+                       url(r'^polls/', include('polls.urls', namespace="polls")),
                        url(r'^admin/', include(admin.site.urls)),
                        )
 
