@@ -9,6 +9,7 @@ Writing your first Django app, part 1
 https://docs.djangoproject.com/en/1.7/intro/tutorial01/
 https://docs.djangoproject.com/en/1.7/intro/tutorial02/
 https://docs.djangoproject.com/en/1.7/intro/tutorial03/
+https://docs.djangoproject.com/en/1.7/intro/tutorial04/
 
 http://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv
 
