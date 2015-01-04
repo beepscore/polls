@@ -141,4 +141,30 @@ In base_site.html I changed back to original.
 {{ site_header|default:_('Django administration') }}
 Then in urls.py set admin.site_header
 
+### Test
+In file polls/polls/tests.py add
+class QuestionMethodTests(TestCase): with method
+def test_was_published_recently_with_future_question(self):
 
+    ➜  polls git:(master) ✗ workon mysite
+    (mysite)➜  polls git:(master) ✗ pwd
+    /Users/stevebaker/Documents/projects/pythonProjects/django-projects/polls
+    (mysite)➜  polls git:(master) ✗ ls
+    README.md  db.sqlite3 manage.py  mysite     polls      templates
+
+    (mysite)➜  polls git:(master) ✗ python manage.py test polls
+    Creating test database for alias 'default'...
+    F
+    ======================================================================
+    FAIL: test_was_published_recently_with_future_question (polls.tests.QuestionMethodTests)
+    ----------------------------------------------------------------------
+    Traceback (most recent call last):
+      File "/Users/stevebaker/Documents/projects/pythonProjects/django-projects/polls/polls/tests.py", line 20, in test_was_published_recently_with_future_question
+        self.assertEqual(future_question.was_published_recently(), False)
+    AssertionError: True != False
+
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.002s
+
+    FAILED (failures=1)
+    Destroying test database for alias 'default'...
